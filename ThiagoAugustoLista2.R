@@ -1,4 +1,4 @@
-#Lista 2 - ProgramaÁ„o EstatÌstica
+#Lista 2 - Programa√ß√£o Estat√≠stica
 
 #1)
 
@@ -6,12 +6,12 @@ a=1
 b=3
 c=4
 if(a==b && b==c){
-  cat("Equil·tero")
+  cat("Equil√°tero")
 }else{
   if(a!=b && a!=c && b!=c){
     cat("Escaleno")
   }else{
-    cat("IsÛsceles")
+    cat("Is√≥sceles")
   }
 }
 
@@ -157,6 +157,57 @@ soma2
 #7)
 #a)
 z=NULL
-for(i in 1:10){
-  
+for(j in 1:10){
+  soma=0
+  for(i in 1:length(L4[[j]])){
+    soma=soma+L4[[j]][i]
+  }
+  z[i]=soma
+}
+z
+#c)
+n=0
+for (i in 1:10){
+  if(z[i]%%5==0)
+    n=n+1
+}
+n
+#8)
+t=2
+x0=2
+i=1
+for(i in 1:99){
+  t[i+1]=x0+3
+  x0=x0+3
+ 
+}  
+#b)
+soma=0
+for(i in 1:35){
+  soma=soma+t[i]
+}
+soma
+#c)
+n=0
+for(i in 1:100){
+  if(t[i]%%4==0)
+    n=n+1
+}
+#d)
+n=0
+for(i in 1:100){
+  if(t[i]%%4==0 && t[i]%%5==0)
+    n=n+1
+}
+#e)
+n=0
+for(i in 1:100){
+  if(t[i]%%4==0 || t[i]%%5==0)
+    n=n+1
+}
+#f)
+x=t
+for(i in 1:100){
+  if(x[i]%%2!=0)
+    x[i]=0
 }
