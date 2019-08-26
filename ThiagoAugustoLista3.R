@@ -96,3 +96,68 @@ cnmultmenork<-function(m,k){
   return(c)
 }
 cnmultmenork(4,17)
+#5)
+criamatriz<-function(n){
+  if(n<=0 || n%%1!=0)
+    stop("Digite um número inteiro positivo")
+  m=matrix(0,nrow=n,ncol=n,byrow=F)
+  for(i in 1:n){
+    for(j in 1:n){
+      if(i%%2==0){
+        m[i,j]=2
+      }else{
+        m[i,j]=1
+      }
+    }
+    
+  }
+  return(m)
+}
+criamatriz(10)
+criamatriz2<-function(n){
+  if(n<=0 || n%%1!=0)
+    stop("Digite um número inteiro positivo")
+  m=matrix(0,nrow=n,ncol=n,byrow=F)
+  for(i in 1:n){
+    for(j in 1:n){
+      if(i%%2==0){
+        m[j,i]=2
+      }else{
+        m[j,i]=1
+      }
+    }
+    
+  }
+  return(m)
+}
+criamatriz2(10)
+criamatriz3<-function(n){
+  if(n<=0 || n%%1!=0)
+    stop("Digite um número inteiro positivo")
+  m=matrix(0,nrow=n,ncol=n,byrow=F)
+  for(i in 1:n){
+        m[i,i]=i
+        i=i+1
+    }
+  return(m)
+}
+criamatriz3(10)
+#6
+matrizdiag<-function(vet){
+ n=length(vet)
+ m=matrix(0,nrow=n,ncol=n,byrow=F)
+ for (i in 1:n){
+   m[i,i]=vet[i]
+ }
+ return(m)
+}
+matrizquadrada<-function(vet){
+  n=length(vet)
+  m=matrix(0,nrow=n,ncol=n,byrow=F)
+  for (i in 1:n){
+    for(j in 1:)
+    m[i,1]=vet[i]
+  }
+  return(m)
+}
+matrizquadrada(c(1,1,1,1,3))
