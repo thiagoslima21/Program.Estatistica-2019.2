@@ -172,3 +172,23 @@ matrizquadrada2<-function(vet){
   }
   return(m)
 }
+#7
+dezpa3<-function(x0){
+  vet=x0
+  for(i in 1:9){
+    vet[i+1]=x0+3
+    x0=x0+3
+    
+  } 
+  return(vet)
+}
+dezpa<-function(x0,r){
+  vet=x0
+  for(i in 1:9){
+    vet[i+1]=x0+r
+    x0=x0+r
+    
+  } 
+  return(vet)
+}
+dezpa(2,3)
