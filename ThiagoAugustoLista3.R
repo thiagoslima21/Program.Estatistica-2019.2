@@ -162,3 +162,13 @@ matrizquadrada<-function(vet){
   return(m)
 }
 matrizquadrada(c(1,1,1,1,3))
+matrizquadrada2<-function(vet){
+  n=length(vet)
+  m=matrix(0,nrow=n,ncol=n,byrow=F)
+  for (i in 1:n){
+    for(j in 1:n){
+      m[j,i]=vet[i]
+    }
+  }
+  return(m)
+}
