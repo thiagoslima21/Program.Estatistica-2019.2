@@ -165,6 +165,17 @@ for(j in 1:10){
   z[i]=soma
 }
 z
+#b)
+v <- character()
+for (i in 1:10) {
+  soma = sum(l4[[i]])
+  if(soma%%5==0){
+    v[i] = paste(soma, "é múltiplo de 5")
+  }else{
+    v[i] = paste(soma, "não é múltiplo de 5")
+  }
+  
+}
 #c)
 n=0
 for (i in 1:10){
@@ -211,3 +222,65 @@ for(i in 1:100){
   if(x[i]%%2!=0)
     x[i]=0
 }
+#9)
+
+
+
+#a
+
+# primeira alternativa 
+fibonacci = c(1,1)
+for (i in 3:12) {
+  fibonacci[i] = fibonacci[i-2]+fibonacci[i-1]
+  
+}
+finonacci
+
+# segunda alternativa 
+
+fibonacci = NULL
+for (i in 1:12) {
+  if(i<=2){
+    fibonacci[i] = 1
+  }else{
+    fibonacci[i] = finonacci[i-2]+finonacci[i-1]
+  }
+}
+
+finonacci
+
+# B
+
+fibonacci = NULL
+i = 1
+repeat{
+  if(i<=2){
+    fibonacci[i]=1
+  }else{
+    if((fibonacci[i-2]+fibonacci[i-1])>=300){
+      break
+    }
+    fibonacci[i] = fibonacci[i-2]+fibonacci[i-1]
+  }
+
+  i = i+1
+}
+fibonacci
+
+
+# C
+
+f1 = 1
+f2 = 1
+n = 2
+c = 0
+repeat{
+  if(f1+f2>=1000){
+    break
+  }
+  c = f1 + f2
+  f1 = f2
+  f2 = c
+  n = n+1
+}
+n
