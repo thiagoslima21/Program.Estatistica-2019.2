@@ -155,9 +155,10 @@ matrizquadrada<-function(vet){
   n=length(vet)
   m=matrix(0,nrow=n,ncol=n,byrow=F)
   for (i in 1:n){
-    for(j in 1:)
-    m[i,1]=vet[i]
-  }
+    for(j in 1:n){
+       m[i,j]=vet[i]
+    }
+    }
   return(m)
 }
 matrizquadrada(c(1,1,1,1,3))
