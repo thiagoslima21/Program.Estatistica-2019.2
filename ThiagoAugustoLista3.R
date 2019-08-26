@@ -24,15 +24,15 @@ triangulo<-function(a,b,c){
     stop("Digite medidas positivas")
   }
   if(a>b+c || b>a+c || c>a+b){
-    stop("Os dados digitados n„o formam um tri‚ngulo")
+    stop("Os dados digitados n√£o formam um tri√¢ngulo")
   }
   if(a==b && b==c){
-    cat("Equil·tero")
+    cat("Equil√°tero")
   }else{
     if(a!=b && a!=c && b!=c){
       cat("Escaleno")
     }else{
-      cat("IsÛsceles")
+      cat("Is√≥sceles")
     }
   }
 }
@@ -70,3 +70,29 @@ nmultiplosdem<-function(n,m){
   return(vet)
 }
 
+#b)
+nmultmenork<-function(m,k){
+  vet=NULL
+  i=1
+  while(m*i<k){
+    vet[i]=m*i
+    i=i+1
+  }
+  return(vet)
+}
+nmultmenork(2,100)
+#c)
+cnmultmenork<-function(m,k){
+  vet=NULL
+  i=1
+  c=0
+  repeat{
+    if(m*i>=k)
+      break
+    if(m*i<k)
+      c=c+1
+    i=i+1
+  }
+  return(c)
+}
+cnmultmenork(4,17)
