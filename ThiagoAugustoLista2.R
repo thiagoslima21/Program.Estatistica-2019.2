@@ -224,63 +224,44 @@ for(i in 1:100){
 }
 #9)
 
+# Letra a
 
-
-#a
-
-# primeira alternativa 
-fibonacci = c(1,1)
-for (i in 3:12) {
-  fibonacci[i] = fibonacci[i-2]+fibonacci[i-1]
-  
+f <- c(1,1)
+for(i in 3: 12){
+  f[i] <- f[i - 1] + f[i-2]
 }
-finonacci
+f
 
-# segunda alternativa 
+# Letra b
 
-fibonacci = NULL
-for (i in 1:12) {
-  if(i<=2){
-    fibonacci[i] = 1
-  }else{
-    fibonacci[i] = finonacci[i-2]+finonacci[i-1]
-  }
-}
-
-finonacci
-
-# B
-
-fibonacci = NULL
-i = 1
+f <- c(1,1)
+i <- 3
 repeat{
-  if(i<=2){
-    fibonacci[i]=1
-  }else{
-    if((fibonacci[i-2]+fibonacci[i-1])>=300){
-      break
-    }
-    fibonacci[i] = fibonacci[i-2]+fibonacci[i-1]
-  }
-
-  i = i+1
-}
-fibonacci
-
-
-# C
-
-f1 = 1
-f2 = 1
-n = 2
-c = 0
-repeat{
-  if(f1+f2>=1000){
+  if(f[i-1] + f[i-2]>300){
     break
   }
-  c = f1 + f2
-  f1 = f2
-  f2 = c
-  n = n+1
+  f[i] <- f[i-1] + f[i-2]
+  i <- i+1
+  }
+f
+length(f)
+
+cont <- 0
+f <- c(1,1)
+for(i in 3: 100000){
+  f[i] <- f[i - 1] + f[i-2]
+  cont <- cont + 1
 }
-n
+cont
+
+# Letra c
+
+cont <- 2
+f <- c(1,1)
+for(i in 3: 1000000){
+  f[i] <- f[i - 1] + f[i-2]
+  if(f[i] <= 1000000){
+    cont <- cont + 1
+  }
+}
+cont
