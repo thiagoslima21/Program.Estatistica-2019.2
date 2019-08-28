@@ -4,6 +4,8 @@
 fatoracao<-function(k){
   vet=NULL
   j=2
+  if(k==1)
+    return(1)
   repeat{
     if(k==1)
       break
@@ -16,7 +18,7 @@ fatoracao<-function(k){
   }
   return(vet)
 }
-fatoracao(27898)
+fatoracao(28864)
 #2
 #a)
 eprimo<-function(n){
@@ -33,11 +35,17 @@ eprimo<-function(n){
     return(F)
   }
 }
+eprimo(201401)
 nprimos<-function(n){
-  vet=NULL
-  for(i in 1:n){
-    if(eprimo(i))
+  vet=1
+  c=0
+  i=1
+  while(c<n-1){
+    if(eprimo(i)){
       vet=c(vet,i)
+      c=c+1
+    }
+    i=i+1
   }
   return(vet)
 }
