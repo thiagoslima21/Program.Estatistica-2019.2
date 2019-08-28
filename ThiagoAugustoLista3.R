@@ -192,3 +192,87 @@ dezpa<-function(x0,r){
   return(vet)
 }
 dezpa(2,3)
+dezpa2<-function(x0,r,n){
+  vet=x0
+  for(i in 1:n-1){
+    vet[i+1]=x0+r
+    x0=x0+r
+    
+  } 
+  return(vet)
+}
+dezpa4<-function(x0,r,n,m){
+  vet=x0
+  soma=x0
+  for(i in 1:m){
+    vet[i+1]=x0+r
+    x0=x0+r
+    soma=soma+vet[i+1]
+    
+  } 
+  return(soma)
+}
+#8)
+
+fibo<-function(n){
+  f <- c(1,1)
+  for(i in 3: n){
+    f[i] <- f[i - 1] + f[i-2]
+  }
+  return(f)
+}  
+fibo(5)
+fibo2<-function(k){
+  f <- c(1,1)
+  i <- 3
+  repeat{
+    if(f[i-1] + f[i-2]>k){
+      break
+    }
+    f[i] <- f[i-1] + f[i-2]
+    i <- i+1
+  }
+  return(f)
+}
+fibo2(6)
+fibo3<-function(k){
+  f <- c(1,1)
+  i <- 3
+  repeat{
+    if(f[i-1] + f[i-2]>k){
+      break
+    }
+    f[i] <- f[i-1] + f[i-2]
+    i <- i+1
+  }
+  return(i-1)
+}
+fibo3(6)
+#9)
+
+#10)
+pg<-function(x0,q,n){
+  p<-x0
+  for(i in 2:n){
+    p[i]=x0*q
+    x0=x0*q
+  }
+  return(p)
+}
+pg(2,2,10)
+pg2<-function(x0,q,m){
+  p<-x0
+  soma<-x0
+  for(i in 2:m){
+    p[i]=x0*q
+    x0=x0*q
+    soma=soma+p[i]
+  }
+  return(soma)
+}
+pg2(1/2,1/2,10)
+
+pg2(1/2,1/2,30)
+
+options(digits=22)
+#Conclui-se que essa série converge para a=1.
