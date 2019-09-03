@@ -94,18 +94,21 @@ quartil2<-function(vet){
 quartil2(c(1,2,8,7,8))
 #6)
 pertence<-function(a,vet){
+  if(is.null(vet)){
+    return(F)
+  }
   for(i in 1:length(vet)){
     if(vet[i]==a)
       return(T)
-    else
-      return(F)
+     
   }
+  return(F)
 }
-
+  
 freq<-function(vet){
-  num=vet[1]
-  freq=1
-  for(j in 2:length(vet)){
+  num=NULL
+  freq=NULL
+  for(j in 1:length(vet)){
     c=0
     if(!pertence(vet[j],num)){
       num=c(num,vet[j])
@@ -113,7 +116,7 @@ freq<-function(vet){
         if(vet[j]==vet[i])
           c=c+1
       }
-    freq=c(freq,c)
+      freq=c(freq,c)
     }
   }
   n=length(num)
@@ -122,5 +125,6 @@ freq<-function(vet){
   m[2,]=freq
   return(m)
 }
-freq(c(1,2,2,5,5,5,5,5,5))
+freq(c(1,2,2,2,2))
+
 
