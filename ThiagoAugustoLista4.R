@@ -31,9 +31,10 @@ minimo<-function(vet){
 posminimo<-function(vet){
   minimo=vet[1]
   for(i in 2:length(vet)){
-    if(vet[i]<=minimo)
+    if(vet[i]<=minimo){
       minimo=vet[i]
-    c=i
+      c=i
+    }
   }
   return(c)
 }
