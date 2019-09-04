@@ -1,4 +1,4 @@
-#Lista 4 -  Programação Estatística
+#Lista 4 -  ProgramaÃ§Ã£o EstatÃ­stica
 #1-
 maximo<-function(vet){
   maior=vet[1]
@@ -236,3 +236,17 @@ cov<-function(vet1,vet2){
   cv=sq/(n-1)
   return(cv)
 }
+#Desafio
+matrizcov<-function(M){
+  n=dim(M)[1]
+  A=matrix(0,ncol=n,nrow=n)
+  for(i in 1:n){
+    for(j in 1:n){
+      A[i,j]=cov(M[i,],M[j,])
+    }
+  }
+  return(A)
+}
+t=matrix(c(2,3,60,50,11,7,8,9,10),nrow=3,ncol=3)
+
+matrizcov(t)
