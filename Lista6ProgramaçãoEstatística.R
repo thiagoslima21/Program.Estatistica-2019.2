@@ -1,0 +1,45 @@
+#Lista 6 - Programação Estatística
+
+#1
+fatorial<-function(n){
+  if(n==0)
+    return(1)
+  return(n*fatorial(n-1))
+}
+fatorial(3)
+#2
+maximo<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v[1])
+  w=v[2:n]
+  mw=maximo(w)
+  if(mw<v[1])
+    return(v[1])
+  return(mw)
+}
+maximo(c(1,2,3,5,1))
+#3
+soma<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v[1])
+  w=v[2:n]
+  s=v[1]
+  return(s+soma(w))
+}
+soma(c(1,2,3))
+#4
+posmaximo<-function(v){
+  n=length(v)
+  if(n==1)
+    return(1)
+  w=v[1:(n-1)]
+  pos=posmaximo(w)
+  if(v[n]>v[pos])
+      return(n)
+  return(pos)
+}
+r=runif(6,0,1)
+posmaximo(r)
+#5
