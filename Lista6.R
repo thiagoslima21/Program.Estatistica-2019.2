@@ -1,0 +1,114 @@
+#Lista 6 - Programação Estatística
+
+#1
+fatorial<-function(n){
+  if(n==0)
+    return(1)
+  return(n*fatorial(n-1))
+}
+fatorial(3)
+#2
+maximo<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v[1])
+  w=v[2:n]
+  mw=maximo(w)
+  if(mw<v[1])
+    return(v[1])
+  return(mw)
+}
+maximo(c(1,2,3,5,1))
+#3
+soma<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v[1])
+  w=v[2:n]
+  s=v[1]
+  return(s+soma(w))
+}
+soma(c(1,2,3))
+#4
+posmaximo<-function(v){
+  n=length(v)
+  if(n==1)
+    return(1)
+  w=v[1:(n-1)]
+  pos=posmaximo(w)
+  if(v[n]>v[pos])
+    return(n)
+  return(pos)
+}
+r=runif(6,0,1)
+posmaximo(r)
+#5
+bolinhas<-function(n){
+  if(n==1)
+    return(1)
+  return(2*n-1+bolinhas(n-1))
+}  
+bolinhas(4)
+  
+#6
+investe<-function(n){
+  if(n==1)
+    return(500*(1+7.5/100))
+  return((1+7.5/100)*investe(n-1))
+}  
+investe(2)
+
+#7
+investe2<-function(I,j,n){
+  I=I*(1+j/100)
+  if(n==1)
+    return(I)
+  return(investe2(I,j,n-1))
+  }
+investe2(1000,10,2)
+#8
+financiamento<-function(n){
+  if(n==1)
+    return((1200*(1+2/100))-150)
+  if(((1+2/100)*financiamento(n-1)-150)<=0)
+    return(0)
+  return((1+2/100)*financiamento(n-1)-150)
+}
+
+financiamento(2)
+#9
+financiamento2<-function(I,j,K,n){
+  if(n==1)
+    return((I*(1+j/100))-K)
+  if(((1+j/100)*financiamento2(I,j,K,n-1)-K)<=0)
+    return(0)
+  return((1+j/100)*financiamento2(I,j,K,n-1)-K)
+}
+financiamento2(1200,2,150,8)
+#10
+financiamento3<-function(vf,j,K){
+  if(vf<=K)
+    return(1)
+  vf=vf*(1+j/100)-K
+  return(1+financiamento3(vf,j,K))  
+ 
+}
+financiamento3(1200,2,150)  
+#11
+fibo<-function(n){
+  if(n==1)
+    return(1)
+  if(n==2)
+    return(1)
+  return(fibo(n-1)+fibo(n-2))
+}
+fibo(6)
+#12
+eqdif<-function(n){
+  if(n==1)
+    return(0)
+  if(n==2)
+    return(0)
+  return(2*eqdif(n-1)+eqdif(n-2)+n)
+}
+eqdif(4)
