@@ -92,7 +92,38 @@ ordenabolharec2<-function(v){
 ordenabolharec2(c(54,3,2,5,1,3123,13,11,212,9,7,6))
 
 #Questão 8.2 - Com contagem
+ordenabolhacont<-function(v){
+  n=length(v)
+  c=0
+  for(j in 1:(n-1)){
+    for(i in 1:(n-j)){
+      c=c+1
+      if(v[i]>v[i+1]){
+        aux=v[i]
+        v[i]=v[i+1]
+        v[i+1]=aux
+      }
+    }
+  }
+  return(list(v,c))
+}
+ordenabolhacont(c(2,1,4,6,11,33))
 
+ordenabolharec<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v)
+  for(i in 1:(n-1)){
+    if(v[i]>v[i+1]){
+      aux=v[i]
+      v[i]=v[i+1]
+      v[i+1]=aux
+    }
+  }
+  w=v[1:(n-1)]
+  wo=ordenabolharec(w)
+  return(c(wo,v[n]))
+}
 #8.7
 ordenarapido<-function(v){
   n=length(v)
