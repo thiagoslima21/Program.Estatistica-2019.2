@@ -24,8 +24,76 @@ ordenabolha<-function(v){
   return(v)
 }
 ordenabolha(c(5,3,2,1))
+#Questão 2
+ordenabolharec<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v)
+  for(i in 1:(n-1)){
+    if(v[i]>v[i+1]){
+      aux=v[i]
+      v[i]=v[i+1]
+      v[i+1]=aux
+    }
+  }
+  w=v[1:(n-1)]
+  wo=ordenabolharec(w)
+  return(c(wo,v[n]))
+}
+ordenabolharec(c(4,5,2,1,3,0))
+#
+ordenabolha2<-function(v){
+  n=length(v)
+  for(j in 1:(n-1)){
+    troca=F
+    for(i in 1:(n-j)){
+      if(v[i]>v[i+1]){
+        aux=v[i]
+        v[i]=v[i+1]
+        v[i+1]=aux
+        troca=T
+      }
+    if(troca==F){return(v)}  
+    }
+  }
+  return(v)
+}
+ordenabolha2(c(4,3,2,1))
+#Defina n = tamanho do vetor v;
+#2 Se n = 1, retorne v;
+#3 Inicie troca = F;
+#4 Inicie i = 1;
+#5 Se vi < vi+1, troque a posição i com posição i + 1 no vetor v e faça troca = T;
+#6 Incremente i = i + 1
+#7 Se i <= n -􀀀 1, volte para a linha 5;
+#8 Se troca = F, retorne v;
+#9 Defina w = (v1; v2; :::; vn􀀀1);
+#10 Defina wo =OrdenaBolhaRec2(w);
+#11 Defina vo = (wo; vn);
+#12 Retorne vo.
+ordenabolharec2<-function(v){
+  n=length(v)
+  if(n==1)
+    return(v)
+  troca=F 
+  for(i in 1:(n-1)){
+    if(v[i]>v[i+1]){
+      aux=v[i]
+      v[i]=v[i+1]
+      v[i+1]=aux
+      troca=T
+    }
+  if(troca==F){return(v)}  
+  }
+  w=v[1:(n-1)]
+  wo=ordenabolharec(w)
+  return(c(wo,v[n]))
+}
+ordenabolharec2(c(54,3,2,5,1,3123,13,11,212,9,7,6))
 
-#Ordena Rápido
+#Questão 8.2 - Com contagem
+
+#8.7
 ordenarapido<-function(v){
   n=length(v)
   if(n==1)
