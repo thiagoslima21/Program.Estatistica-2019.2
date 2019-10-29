@@ -109,21 +109,6 @@ ordenabolhacont<-function(v){
 }
 ordenabolhacont(c(2,1,4,6,11,33))
 
-ordenabolharec<-function(v){
-  n=length(v)
-  if(n==1)
-    return(v)
-  for(i in 1:(n-1)){
-    if(v[i]>v[i+1]){
-      aux=v[i]
-      v[i]=v[i+1]
-      v[i+1]=aux
-    }
-  }
-  w=v[1:(n-1)]
-  wo=ordenabolharec(w)
-  return(c(wo,v[n]))
-}
 #8.7
 ordenarapido<-function(v){
   n=length(v)
