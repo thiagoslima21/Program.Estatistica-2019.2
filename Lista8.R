@@ -2,7 +2,7 @@
 #1 Defina n = tamanho do vetor v;
 #2 Inicie j = 1;
 #3 Inicie i = 1;
-#4 Se vi < vi+1, troque a posição i com posição i + 1 no vetor v;
+#4 Se vi > vi+1, troque a posição i com posição i + 1 no vetor v;
 #5 Incremente i = i + 1
 #6 Se i <= n -􀀀 j, volte para a linha 4;
 #7 Incremente j = j + 1
@@ -63,7 +63,7 @@ ordenabolha2(c(4,3,2,1))
 #2 Se n = 1, retorne v;
 #3 Inicie troca = F;
 #4 Inicie i = 1;
-#5 Se vi < vi+1, troque a posição i com posição i + 1 no vetor v e faça troca = T;
+#5 Se vi > vi+1, troque a posição i com posição i + 1 no vetor v e faça troca = T;
 #6 Incremente i = i + 1
 #7 Se i <= n -􀀀 1, volte para a linha 5;
 #8 Se troca = F, retorne v;
@@ -81,8 +81,8 @@ ordenabolharec2<-function(v){
       aux=v[i]
       v[i]=v[i+1]
       v[i+1]=aux
+     }
       troca=T
-    }
   if(troca==F){return(v)}  
   }
   w=v[1:(n-1)]
