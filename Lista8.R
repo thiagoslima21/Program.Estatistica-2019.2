@@ -81,10 +81,10 @@ ordenabolharec2<-function(v){
       aux=v[i]
       v[i]=v[i+1]
       v[i+1]=aux
-     }
       troca=T
-  if(troca==F){return(v)}  
+     }
   }
+  if(troca==F){return(v)}  
   w=v[1:(n-1)]
   wo=ordenabolharec2(w)
   return(c(wo,v[n]))
