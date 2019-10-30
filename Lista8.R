@@ -86,7 +86,7 @@ ordenabolharec2<-function(v){
   if(troca==F){return(v)}  
   }
   w=v[1:(n-1)]
-  wo=ordenabolharec(w)
+  wo=ordenabolharec2(w)
   return(c(wo,v[n]))
 }
 ordenabolharec2(c(54,3,2,5,1,3123,13,11,212,9,7,6))
